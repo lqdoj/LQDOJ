@@ -1,0 +1,9 @@
+.problems-section{
+    width: 100%;
+}
+
+.problems-section > table{
+    width: 100%;
+    vertical-align: center;
+    text-align: center;
+}
