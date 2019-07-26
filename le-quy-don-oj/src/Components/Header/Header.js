@@ -32,7 +32,9 @@ const Header = (props) =>{
         <div id="Header">
             {(ifLogged===false)?toLogin:loggedIn}
             <div className="logo-div">
-                <img src={logo} className="top-logo" alt="le quy don logo"/>
+                <a href="/">
+                    <img src={logo} className="top-logo" alt="le quy don logo"/>
+                </a>
             </div>
             <Navbar listOfSections={props.listOfSections}/>
         </div>

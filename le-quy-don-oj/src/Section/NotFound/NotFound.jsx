@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 const NotFound = () =>{
     return(
         <div>
-            This Page Not Found <br></br>
+            The requested URL was not found on this server.<br></br>
             Return to <Link to="/">HomePage</Link>
         </div>
     )

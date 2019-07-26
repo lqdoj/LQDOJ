@@ -5,7 +5,8 @@ import PATH from './Path';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Section/NotFound/NotFound';
-import Navbar from './Components/Navbar/Navbar';
+import HomeSection from './Section/HomeSection/HomeSection';
+
 const listOfSections=['HOME','CONTESTS','PROBLEMS','FAQ','BUG_REPORT'];
 function App() {
   return (
@@ -13,17 +14,21 @@ function App() {
       <Router>
         <Header listOfSections={listOfSections}/>
           {/* Below is main part of website */}
-
-        <Switch>
-          <Route exact path={PATH.HOME} component ={null}/>
-          <Redirect from={`${PATH.LOGIN}*`} to={PATH.LOGIN}/>
-          <Route path={PATH.LOGIN} component = {null}/>
-          <Redirect from={`${PATH.SIGNUP}*`} to={PATH.SIGNUP}/>
-          <Route path={PATH.SIGNUP} component = {null}/>
-          {/*this is no match page*/}
-          <Route component = {NotFound}/>
-        </Switch>
-
+        <div className="app-body">
+          <div className="app-body_left">
+            <Switch>
+              <Route exact path={PATH.HOME} component ={HomeSection}/>
+              <Redirect from={`${PATH.LOGIN}*`} to={PATH.LOGIN}/>
+              <Route path={PATH.LOGIN} component = {null}/>
+              <Redirect from={`${PATH.SIGNUP}*`} to={PATH.SIGNUP}/>
+              <Route path={PATH.SIGNUP} component = {null}/>
+              {/*this is no match page*/}
+              <Route component = {NotFound}/>
+            </Switch>
+          </div>
+          <div className="app-body_right">
+          </div>
+        </div>
           {/* Above is main part of website */}
         <Footer/>
       </Router>
