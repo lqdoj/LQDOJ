@@ -7,7 +7,9 @@ import Footer from './Components/Footer/Footer';
 import NotFound from './Section/NotFound/NotFound';
 import HomeSection from './Section/HomeSection/HomeSection';
 import ProblemsSection from './Section/ProblemsSection/ProblemsSection';
+import ProblemWithIDSection from './Section/ProblemWithIDSection/ProblemWithIDSection';
 const listOfSections=['HOME','CONTESTS','PROBLEMS','FAQ','BUG_REPORT'];
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,7 @@ function App() {
               <Redirect from={`${PATH.SIGNUP}*`} to={PATH.SIGNUP}/>
               <Route path={PATH.SIGNUP} component = {null}/>
               <Route exact path={PATH.PROBLEMS} component={ProblemsSection}/>
+              <Route path={`${PATH.PROBLEMS}:id/`} component={ProblemWithIDSection}/>
               {/*this is no match page*/}
               <Route component = {NotFound}/>
             </Switch>

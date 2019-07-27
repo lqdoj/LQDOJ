@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProblemsSection.css';
-import Problem from '../../Components/Problem/Problem';
+import ProblemTag from '../../Components/ProblemTag/ProblemTag';
 const listOfProblems=[
     {
         id:"0000",
@@ -32,7 +32,7 @@ const listOfAttempProblems=['0000','0001'];
 const displayedProblems=listOfProblems.map(
     problem=>{
         return(
-            <Problem prob={problem} solved={listOfSolvedProblems.includes(problem.id)} attemp={listOfAttempProblems.includes(problem.id)}/>
+            <ProblemTag prob={problem} solved={listOfSolvedProblems.includes(problem.id)} attemp={listOfAttempProblems.includes(problem.id)}/>
         )
     }
 )
